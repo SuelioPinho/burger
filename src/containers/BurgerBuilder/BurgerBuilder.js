@@ -28,7 +28,7 @@ class BurgerBuilder extends Component{
     };
 
     componentDidMount() {
-        axios.get('/ingredients.json')
+        axios.get('/ingredients')
             .then(response => {
                 this.setState({ingredients: response.data});
             })
@@ -103,7 +103,7 @@ class BurgerBuilder extends Component{
             },
             deliveryMethod: 'fastest'
         };
-        axios.post('/orders.json', order)
+        axios.post('/orders', order)
             .then(response => {
                 console.log(response);
                 this.setState({loading: true, purchasing: false});
