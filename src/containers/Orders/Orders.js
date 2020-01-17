@@ -12,7 +12,7 @@ class Orders extends Component{
 
     componentDidMount() {
         axios.get('/orders').then(res => {
-            console.log(res.data)
+            console.log(res.data);
             this.setState({loading: false, orders: res.data['data']});
         }).catch(err => {
             this.setState({loading: false});
